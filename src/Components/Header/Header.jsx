@@ -2,14 +2,12 @@ import './Header.css'
 import logo from "../../assets/logo.png";
 import { useState } from 'react';
 
-
 function Header() {
 
   const [downloadMenu, setDownloadMenu] = useState(false);
 
   function menuOpen(){
     setDownloadMenu(!downloadMenu);
-    console.log(downloadMenu);
   }
 
   return (
