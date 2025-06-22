@@ -10,9 +10,8 @@ function App() {
     <Header/>
     <Landing/>
 
-
     </>
-  )
+  );
 }
 
-export default App
+export default App;
