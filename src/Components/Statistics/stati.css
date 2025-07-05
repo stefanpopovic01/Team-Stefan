@@ -1,0 +1,48 @@
+.weekly-stats {
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  height: 300px;
+  max-width: 600px;
+  margin: auto;
+}
+
+.stat-row {
+  display: flex;
+  margin-top: 90px;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.date-label {
+  width: 60px;
+  text-align: center;
+  font-weight: 500;
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  color: #333;
+}
+
+.progress-bar {
+  flex: 1;
+  height: 30px;
+  background-color: #e0e0e0;
+  border-radius: 8px;
+  margin: 0 10px;
+  overflow: hidden;
+  position: relative;
+}
+
+.progress-fill {
+  height: 100%;
+  background-color: #4285f4;
+  color: white;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: width 0.4s ease-in-out;
+}
+
+h2{
+    font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+}
