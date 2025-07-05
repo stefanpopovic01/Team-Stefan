@@ -1,6 +1,7 @@
 import './App.css'
 import Header from './Components/Header/Header'
 import Landing from './Components/Landing/Landing'
+import TodoList from './ToDo/TodoList';
 
 function App() {
 
@@ -9,7 +10,7 @@ function App() {
 
     <Header/>
     <Landing/>
-
+    <TodoList></TodoList>
     </>
   );
 }
