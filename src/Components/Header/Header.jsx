@@ -19,7 +19,7 @@ function Header() {
                         <div className='header-logo'><img src={logo}/></div>
                         <div className='header-try'><a href='#'>Try now</a></div>
                         <div className='header-download'>
-                            <a href='#'>Download <i class={downloadMenu ? "fa-solid fa-chevron-up" : "fa-solid fa-chevron-down"} onClick={menuOpen}></i> </a>
+                            <a href='#'>Download <i className={downloadMenu ? "fa-solid fa-chevron-up" : "fa-solid fa-chevron-down"} onClick={menuOpen}></i> </a>
                             {downloadMenu && (
                                 <div className='download-menu'>
                                     <div className='download-ios'><a href='#'>App Store</a></div>
@@ -32,13 +32,14 @@ function Header() {
                     </div>
                 </div>
                 <div className='header-h2'>
-                    <div className='header-signUp'><button className='sign-b'>Sign Up <i class="fa-solid fa-chevron-right"></i> </button></div>
+                    <div className='header-signUp'><button className='sign-b'>Sign Up <i className="fa-solid fa-chevron-right"></i> </button></div>
                     <div className='header-signUp'><button className='sign-l'>Log in</button></div>
                 </div>
             </div>
         </div>
     </>
   )
+
 }
 
 export default Header

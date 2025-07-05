@@ -1,13 +1,21 @@
 import React, { useState } from "react";
-import "./ToDoList.css";
+import { useTasks } from "../Components/kontekst";
+import './TodoList.css'
 
 const ToDoList = () => {
-  const [tasks, setTasks] = useState([]);
+  const { tasks, setTasks } = useTasks();
   const [newTask, setNewTask] = useState("");
 
   const handleAddTask = () => {
     if (newTask.trim() !== "") {
-      setTasks([...tasks, { text: newTask, completed: false }]);
+      setTasks([
+        ...tasks,
+        {
+          text: newTask,
+          completed: false,
+          date: new Date().toDateString(), // za statistiku
+        },
+      ]);
       setNewTask("");
     }
   };
@@ -21,25 +29,26 @@ const ToDoList = () => {
 
   return (
     <div className="todo-wrapper">
-      <h1 className="todo-title">Organize, Execute, Triumph.</h1>
-      <p className="todo-subtitle">
-        Unesi svoje dnevne aktivnosti i označi ih kada ih završiš!
-      </p>
-
-      <div className="input-section">
-        <input
-          type="text"
-          value={newTask}
-          onChange={(e) => setNewTask(e.target.value)}
-          placeholder="Unesi novu aktivnost..."
-        />
-        <button onClick={handleAddTask}>Dodaj</button>
+      <h1>Organize, Execute, Triumph.</h1>
+      <div className="todo-flex">
+      <input
+      className='input-unos'
+        type="text"
+        value={newTask}
+        onChange={(e) => setNewTask(e.target.value)}
+        placeholder="Unesi novu aktivnost..."
+      />
+      <button className="dugme" onClick={handleAddTask}>Dodaj</button>
       </div>
-
-      <ul className="task-list">
+      <ul>
         {tasks.map((task, index) => (
-          <li key={index} className={task.completed ? "completed" : ""}>
-            <span onClick={() => toggleCompletion(index)}>{task.text}</span>
+          <li
+            className="taskovi"
+            key={index}
+            onClick={() => toggleCompletion(index)}
+            style={{ textDecoration: task.completed ? "line-through" : "none" }}
+          >
+            {task.text}
           </li>
         ))}
       </ul>
